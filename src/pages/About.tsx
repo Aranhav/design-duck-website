@@ -172,7 +172,7 @@ export default function About() {
       <section className="py-24 sm:py-32 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            {stats.map((stat, index) => (
+            {stats.map((stat) => (
               <div key={stat.label} className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className={cn(
                   'absolute top-0 right-0 h-24 w-24 -translate-y-8 translate-x-8 rounded-full opacity-10',

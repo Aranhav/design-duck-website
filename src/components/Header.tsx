@@ -56,45 +56,71 @@ export default function Header() {
       </nav>
       
       {/* Mobile menu */}
-      <div className={cn('md:hidden', mobileMenuOpen ? 'block' : 'hidden')}>
-        <div className="fixed inset-0 z-50" />
-        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-xl font-bold">
-              Design Duck
-            </Link>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <X className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+      {mobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 z-40 bg-black/25 md:hidden" 
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          
+          {/* Menu panel */}
+          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white shadow-xl md:hidden">
+            <div className="flex h-full flex-col">
+              {/* Header */}
+              <div className="flex items-center justify-between px-6 py-4 border-b">
+                <Link 
+                  to="/" 
+                  className="text-xl font-bold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Design Duck
+                </Link>
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <X className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </div>
+              
+              {/* Navigation */}
+              <nav className="flex-1 overflow-y-auto px-6 py-6">
+                <div className="space-y-1">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={cn(
+                        'block rounded-lg px-3 py-2.5 text-base font-medium transition-colors',
+                        location.pathname === item.href
+                          ? 'bg-primary/10 text-primary'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                      )}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+                
+                {/* CTA Button */}
+                <div className="mt-8">
                   <Link
-                    key={item.name}
-                    to={item.href}
-                    className={cn(
-                      '-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50',
-                      location.pathname === item.href
-                        ? 'text-primary'
-                        : 'text-foreground'
-                    )}
+                    to="/contact"
+                    className="block w-full rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-3 text-center text-sm font-semibold text-white shadow-lg"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {item.name}
+                    Start Your Project
                   </Link>
-                ))}
-              </div>
+                </div>
+              </nav>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </header>
   )
 }
