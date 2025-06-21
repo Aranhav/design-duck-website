@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github, CreditCard, TrendingUp, PieChart, Lock, FileText, QrCode, Package, Truck, BarChart3 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const projects = [
@@ -118,13 +118,94 @@ export default function Work() {
                     project.gradient
                   )} />
                   <div className="relative h-64 lg:h-full min-h-[400px] flex items-center justify-center">
-                    <div className="text-center p-8">
+                    <div className="text-center p-8 w-full">
                       <h3 className="text-3xl font-bold text-white mb-2">
                         {project.title}
                       </h3>
                       <p className="text-white/90 text-sm uppercase tracking-wide">
                         {project.category}
                       </p>
+                      
+                      {/* PocketFlow Mini UI */}
+                      {project.title === 'PocketFlow' && (
+                        <div className="mt-8 mx-auto max-w-sm">
+                          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 space-y-3">
+                            <div className="grid grid-cols-2 gap-3">
+                              <div className="bg-white/20 rounded-lg p-3">
+                                <CreditCard className="h-5 w-5 text-white/80 mb-1" />
+                                <div className="text-xs text-white/70">Balance</div>
+                                <div className="text-lg font-bold text-white">₹82,476</div>
+                              </div>
+                              <div className="bg-white/20 rounded-lg p-3">
+                                <TrendingUp className="h-5 w-5 text-white/80 mb-1" />
+                                <div className="text-xs text-white/70">Income</div>
+                                <div className="text-lg font-bold text-white">+11.1%</div>
+                              </div>
+                            </div>
+                            <div className="bg-white/20 rounded-lg p-3">
+                              <PieChart className="h-5 w-5 text-white/80 mb-1" />
+                              <div className="text-xs text-white/70">Budget Overview</div>
+                              <div className="mt-2 h-2 bg-white/20 rounded-full overflow-hidden">
+                                <div className="h-full w-3/4 bg-white/80 rounded-full" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* OfficeTools Mini UI */}
+                      {project.title === 'OfficeTools Hub' && (
+                        <div className="mt-8 mx-auto max-w-sm">
+                          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+                            <div className="grid grid-cols-3 gap-3">
+                              <div className="bg-white/20 rounded-lg p-3 text-center">
+                                <Lock className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-xs text-white/70">Password</div>
+                              </div>
+                              <div className="bg-white/20 rounded-lg p-3 text-center">
+                                <QrCode className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-xs text-white/70">QR Code</div>
+                              </div>
+                              <div className="bg-white/20 rounded-lg p-3 text-center">
+                                <FileText className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-xs text-white/70">PDF Tools</div>
+                              </div>
+                            </div>
+                            <div className="mt-3 text-center">
+                              <div className="text-xs text-white/70">100% Privacy-First</div>
+                              <div className="text-sm font-semibold text-white">No Data Leaves Your Device</div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Enterprise Logistics Mini UI */}
+                      {project.title === 'Enterprise Logistics Platform' && (
+                        <div className="mt-8 mx-auto max-w-sm">
+                          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 space-y-3">
+                            <div className="grid grid-cols-3 gap-3">
+                              <div className="bg-white/20 rounded-lg p-4 text-center">
+                                <Package className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-white">20K+</div>
+                                <div className="text-xs text-white/70">Vendors</div>
+                              </div>
+                              <div className="bg-white/20 rounded-lg p-4 text-center">
+                                <Truck className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-white">74%</div>
+                                <div className="text-xs text-white/70">Efficiency</div>
+                              </div>
+                              <div className="bg-white/20 rounded-lg p-4 text-center">
+                                <BarChart3 className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-white">60%</div>
+                                <div className="text-xs text-white/70">Less Tickets</div>
+                              </div>
+                            </div>
+                            <div className="bg-white/20 rounded-lg p-3 text-center">
+                              <div className="text-sm font-semibold text-white">Real-time Tracking & Analytics</div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -244,13 +325,41 @@ export default function Work() {
                     project.gradient
                   )} />
                   <div className="relative h-64 lg:h-full min-h-[400px] flex items-center justify-center">
-                    <div className="text-center p-8">
+                    <div className="text-center p-8 w-full">
                       <h3 className="text-3xl font-bold text-white mb-2">
                         {project.title}
                       </h3>
                       <p className="text-white/90 text-sm uppercase tracking-wide">
                         {project.category}
                       </p>
+                      
+                      {/* Enterprise Logistics Mini UI */}
+                      {project.title === 'Enterprise Logistics Platform' && (
+                        <div className="mt-8 mx-auto max-w-sm">
+                          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 space-y-3">
+                            <div className="grid grid-cols-3 gap-3">
+                              <div className="bg-white/20 rounded-lg p-4 text-center">
+                                <Package className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-white">20K+</div>
+                                <div className="text-xs text-white/70">Vendors</div>
+                              </div>
+                              <div className="bg-white/20 rounded-lg p-4 text-center">
+                                <Truck className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-white">74%</div>
+                                <div className="text-xs text-white/70">Efficiency</div>
+                              </div>
+                              <div className="bg-white/20 rounded-lg p-4 text-center">
+                                <BarChart3 className="h-6 w-6 text-white/80 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-white">60%</div>
+                                <div className="text-xs text-white/70">Less Tickets</div>
+                              </div>
+                            </div>
+                            <div className="bg-white/20 rounded-lg p-3 text-center">
+                              <div className="text-sm font-semibold text-white">Real-time Tracking & Analytics</div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
