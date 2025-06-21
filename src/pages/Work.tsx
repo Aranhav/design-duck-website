@@ -7,7 +7,7 @@ const projects = [
     category: 'Personal Finance App',
     description: 'A comprehensive personal finance management app we built because we needed a better way to manage our finances. Features expense tracking, budget management, and financial insights - all in a beautiful, intuitive interface.',
     image: '/projects/pocketflow.jpg',
-    gradient: 'from-blue-400/30 to-purple-500/30',
+    gradient: 'from-blue-400/40 to-purple-500/40',
     tags: ['React Native', 'TypeScript', 'Firebase', 'UI/UX Design'],
     highlights: [
       'Intuitive expense tracking with smart categorization',
@@ -26,7 +26,7 @@ const projects = [
     category: 'Productivity Platform',
     description: 'Born from our frustration with bloated, data-hungry office tools. A privacy-first platform offering PDF tools, QR generators, and more - all processing happens locally in your browser. No uploads, no tracking, just tools that work.',
     image: '/projects/officetools.jpg',
-    gradient: 'from-green-400/30 to-teal-500/30',
+    gradient: 'from-green-400/40 to-teal-500/40',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'WebAssembly'],
     highlights: [
       '100% privacy-first - no data leaves your device',
@@ -45,7 +45,7 @@ const projects = [
     category: 'SaaS Solution',
     description: 'Developed a comprehensive SaaS platform for an international logistics company, including vendor management, tracking systems, and analytics dashboard. Transformed their operations serving thousands of vendors globally.',
     image: '/projects/logistics.jpg',
-    gradient: 'from-orange-400/30 to-red-500/30',
+    gradient: 'from-orange-400/40 to-red-500/40',
     tags: ['React', 'Node.js', 'UI/UX Design', 'System Architecture'],
     highlights: [
       '74% increase in operational efficiency',
@@ -62,7 +62,7 @@ const projects = [
     category: 'Let\'s Build Together',
     description: 'We\'re always excited to work on new challenges. Whether you need a complete product build, a platform redesign, or strategic product consulting, we bring the same passion and expertise that we put into our own products.',
     image: '/projects/next.jpg',
-    gradient: 'from-gray-400/30 to-gray-600/30',
+    gradient: 'from-gray-400/40 to-gray-600/40',
     tags: ['Your Vision', 'Our Expertise', 'Let\'s Talk'],
     highlights: [
       'End-to-end product development',
@@ -79,15 +79,44 @@ export default function Work() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-50 py-32 sm:py-40">
+      <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50 py-32 sm:py-40">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl animate-fade-in">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-2 text-sm font-medium text-purple-700">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
+              </span>
+              Portfolio & Case Studies
+            </div>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl animate-fade-in">
               Our Work
             </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground animate-slide-in">
+            <p className="mt-6 text-xl leading-8 text-gray-600 animate-slide-in">
               From our own products born out of personal need to transformative client projects, each represents our belief that great products emerge when design and engineering work in harmony.
             </p>
+            <div className="mt-10 flex items-center justify-center gap-8 text-sm">
+              <div className="flex items-center gap-2">
+                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                  <span className="text-lg font-bold text-white">3</span>
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-900">Products</div>
+                  <div className="text-gray-600">Launched</div>
+                </div>
+              </div>
+              <div className="h-8 w-px bg-gray-300" />
+              <div className="flex items-center gap-2">
+                <div className="h-12 w-12 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                  <span className="text-lg font-bold text-white">50+</span>
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-900">Projects</div>
+                  <div className="text-gray-600">Delivered</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -118,35 +147,36 @@ export default function Work() {
                     project.gradient
                   )} />
                   <div className="relative h-64 lg:h-full min-h-[400px] flex items-center justify-center">
-                    <div className="text-center p-8 w-full">
-                      <h3 className="text-3xl font-bold text-gray-800 mb-2">
+                    <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
+                    <div className="relative text-center p-8 w-full z-10">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-2 drop-shadow-sm">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 text-sm uppercase tracking-wide">
+                      <p className="text-gray-700 text-sm uppercase tracking-wide font-medium">
                         {project.category}
                       </p>
                       
                       {/* PocketFlow Mini UI */}
                       {project.title === 'PocketFlow' && (
                         <div className="mt-8 mx-auto max-w-sm">
-                          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 space-y-3">
+                          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 space-y-3 shadow-xl">
                             <div className="grid grid-cols-2 gap-3">
-                              <div className="bg-white/20 rounded-lg p-3">
-                                <CreditCard className="h-5 w-5 text-white/80 mb-1" />
-                                <div className="text-xs text-white/70">Balance</div>
-                                <div className="text-lg font-bold text-white">₹82,476</div>
+                              <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+                                <CreditCard className="h-5 w-5 text-blue-600 mb-1" />
+                                <div className="text-xs text-gray-600">Balance</div>
+                                <div className="text-lg font-bold text-gray-900">₹82,476</div>
                               </div>
-                              <div className="bg-white/20 rounded-lg p-3">
-                                <TrendingUp className="h-5 w-5 text-white/80 mb-1" />
-                                <div className="text-xs text-white/70">Income</div>
-                                <div className="text-lg font-bold text-white">+11.1%</div>
+                              <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+                                <TrendingUp className="h-5 w-5 text-green-600 mb-1" />
+                                <div className="text-xs text-gray-600">Income</div>
+                                <div className="text-lg font-bold text-gray-900">+11.1%</div>
                               </div>
                             </div>
-                            <div className="bg-white/20 rounded-lg p-3">
-                              <PieChart className="h-5 w-5 text-white/80 mb-1" />
-                              <div className="text-xs text-white/70">Budget Overview</div>
-                              <div className="mt-2 h-2 bg-white/20 rounded-full overflow-hidden">
-                                <div className="h-full w-3/4 bg-white/80 rounded-full" />
+                            <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+                              <PieChart className="h-5 w-5 text-purple-600 mb-1" />
+                              <div className="text-xs text-gray-600">Budget Overview</div>
+                              <div className="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div className="h-full w-3/4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full" />
                               </div>
                             </div>
                           </div>
@@ -156,24 +186,24 @@ export default function Work() {
                       {/* OfficeTools Mini UI */}
                       {project.title === 'OfficeTools Hub' && (
                         <div className="mt-8 mx-auto max-w-sm">
-                          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+                          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl">
                             <div className="grid grid-cols-3 gap-3">
-                              <div className="bg-white/20 rounded-lg p-3 text-center">
-                                <Lock className="h-6 w-6 text-white/80 mx-auto mb-1" />
-                                <div className="text-xs text-white/70">Password</div>
+                              <div className="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
+                                <Lock className="h-6 w-6 text-blue-600 mx-auto mb-1" />
+                                <div className="text-xs text-gray-600">Password</div>
                               </div>
-                              <div className="bg-white/20 rounded-lg p-3 text-center">
-                                <QrCode className="h-6 w-6 text-white/80 mx-auto mb-1" />
-                                <div className="text-xs text-white/70">QR Code</div>
+                              <div className="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
+                                <QrCode className="h-6 w-6 text-green-600 mx-auto mb-1" />
+                                <div className="text-xs text-gray-600">QR Code</div>
                               </div>
-                              <div className="bg-white/20 rounded-lg p-3 text-center">
-                                <FileText className="h-6 w-6 text-white/80 mx-auto mb-1" />
-                                <div className="text-xs text-white/70">PDF Tools</div>
+                              <div className="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
+                                <FileText className="h-6 w-6 text-purple-600 mx-auto mb-1" />
+                                <div className="text-xs text-gray-600">PDF Tools</div>
                               </div>
                             </div>
                             <div className="mt-3 text-center">
-                              <div className="text-xs text-white/70">100% Privacy-First</div>
-                              <div className="text-sm font-semibold text-white">No Data Leaves Your Device</div>
+                              <div className="text-xs text-gray-600">100% Privacy-First</div>
+                              <div className="text-sm font-semibold text-gray-900">No Data Leaves Your Device</div>
                             </div>
                           </div>
                         </div>
@@ -325,37 +355,38 @@ export default function Work() {
                     project.gradient
                   )} />
                   <div className="relative h-64 lg:h-full min-h-[400px] flex items-center justify-center">
-                    <div className="text-center p-8 w-full">
-                      <h3 className="text-3xl font-bold text-gray-800 mb-2">
+                    <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
+                    <div className="relative text-center p-8 w-full z-10">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-2 drop-shadow-sm">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 text-sm uppercase tracking-wide">
+                      <p className="text-gray-700 text-sm uppercase tracking-wide font-medium">
                         {project.category}
                       </p>
                       
                       {/* Enterprise Logistics Mini UI */}
                       {project.title === 'Enterprise Logistics Platform' && (
                         <div className="mt-8 mx-auto max-w-sm">
-                          <div className="bg-white shadow-sm rounded-2xl p-4 space-y-3">
+                          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 space-y-3 shadow-xl">
                             <div className="grid grid-cols-3 gap-3">
-                              <div className="bg-white shadow-sm rounded-lg p-4 text-center">
-                                <Package className="h-6 w-6 text-orange-500 mx-auto mb-1" />
-                                <div className="text-2xl font-bold text-gray-800">20K+</div>
+                              <div className="bg-white rounded-lg p-4 text-center shadow-sm border border-gray-100">
+                                <Package className="h-6 w-6 text-orange-600 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-gray-900">20K+</div>
                                 <div className="text-xs text-gray-600">Vendors</div>
                               </div>
-                              <div className="bg-white shadow-sm rounded-lg p-4 text-center">
-                                <Truck className="h-6 w-6 text-red-500 mx-auto mb-1" />
-                                <div className="text-2xl font-bold text-gray-800">74%</div>
+                              <div className="bg-white rounded-lg p-4 text-center shadow-sm border border-gray-100">
+                                <Truck className="h-6 w-6 text-red-600 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-gray-900">74%</div>
                                 <div className="text-xs text-gray-600">Efficiency</div>
                               </div>
-                              <div className="bg-white shadow-sm rounded-lg p-4 text-center">
-                                <BarChart3 className="h-6 w-6 text-purple-500 mx-auto mb-1" />
-                                <div className="text-2xl font-bold text-gray-800">60%</div>
+                              <div className="bg-white rounded-lg p-4 text-center shadow-sm border border-gray-100">
+                                <BarChart3 className="h-6 w-6 text-purple-600 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-gray-900">60%</div>
                                 <div className="text-xs text-gray-600">Less Tickets</div>
                               </div>
                             </div>
-                            <div className="bg-white shadow-sm rounded-lg p-3 text-center">
-                              <div className="text-sm font-semibold text-gray-800">Real-time Tracking & Analytics</div>
+                            <div className="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
+                              <div className="text-sm font-semibold text-gray-900">Real-time Tracking & Analytics</div>
                             </div>
                           </div>
                         </div>
