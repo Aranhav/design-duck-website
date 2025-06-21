@@ -1,24 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Linkedin, Github, Mail } from 'lucide-react'
 
-const team = [
-  {
-    name: 'Aranhav Singh',
-    role: 'Product Manager',
-    linkedin: 'https://www.linkedin.com/in/aranhav/',
-  },
-  {
-    name: 'Harikesh Chaturvedi',
-    role: 'Product Designer',
-    linkedin: 'https://www.linkedin.com/in/harikeshiiit/',
-  },
-  {
-    name: 'Shubham Jha',
-    role: 'Frontend Engineer',
-    linkedin: 'https://www.linkedin.com/in/agilevisiondev/',
-  },
-]
-
 export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -74,21 +56,30 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Our Team</h4>
+            <h4 className="font-semibold mb-4">Connect</h4>
             <ul className="space-y-2 text-sm">
-              {team.map((member) => (
-                <li key={member.name}>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                    <span>{member.name}</span>
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/designduck"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/designduck"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                >
+                  <Github className="h-4 w-4" />
+                  <span>GitHub</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

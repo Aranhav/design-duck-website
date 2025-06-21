@@ -1,33 +1,21 @@
-import { Linkedin, Github, Mail, Target, Heart, Zap, Globe } from 'lucide-react'
+import { Target, Heart, Zap } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const team = [
   {
-    name: 'Aranhav Singh',
-    role: 'Product Manager & Co-Founder',
+    role: 'Product Manager',
     bio: 'Dynamic product manager with 6+ years of experience in developing customer-centric products across e-commerce and logistics. Expert in market research, roadmap creation, and cross-functional team leadership.',
-    image: '/team/aranhav.jpg',
-    linkedin: 'https://www.linkedin.com/in/aranhav/',
-    portfolio: 'https://aranhav.com',
-    email: 'aranhavsingh9@gmail.com',
+    avatar: 'PM',
   },
   {
-    name: 'Harikesh Chaturvedi',
-    role: 'Product Designer & Co-Founder',
-    bio: 'Product Designer with 5+ years specializing in creating engaging user experiences. Currently Founding Designer at ShipGlobal, with expertise in UX/UI design, product thinking, and leading design teams.',
-    image: '/team/harikesh.jpg',
-    linkedin: 'https://www.linkedin.com/in/harikeshiiit/',
-    portfolio: 'https://www.harikeshchaturvedi.com/',
-    email: 'harikesh.me21@gmail.com',
+    role: 'Product Designer',
+    bio: 'Product Designer with 5+ years specializing in creating engaging user experiences. Expertise in UX/UI design, product thinking, and leading design teams for enterprise solutions.',
+    avatar: 'PD',
   },
   {
-    name: 'Shubham Jha',
-    role: 'Senior Frontend Engineer & Co-Founder',
+    role: 'Senior Frontend Engineer',
     bio: 'Frontend developer passionate about building scalable, user-centric products. Expert in React, modern web technologies, and translating complex requirements into intuitive interfaces.',
-    image: '/team/shubham.jpg',
-    linkedin: 'https://www.linkedin.com/in/agilevisiondev/',
-    github: 'https://github.com/agilevisiondev',
-    email: 'shbhmkmrjha@gmail.com',
+    avatar: 'FE',
   },
 ]
 
@@ -127,66 +115,26 @@ export default function About() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {team.map((member, index) => (
               <div
-                key={member.name}
+                key={member.role}
                 className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow"
               >
-                {/* Placeholder for image */}
+                {/* Avatar */}
                 <div className={cn(
                   "h-64 flex items-center justify-center",
                   index === 0 && "bg-gradient-to-br from-blue-400 to-blue-600",
                   index === 1 && "bg-gradient-to-br from-purple-400 to-purple-600",
                   index === 2 && "bg-gradient-to-br from-orange-400 to-pink-600"
                 )}>
-                  <div className="text-6xl font-bold text-white/80">
-                    {member.name.split(' ').map(n => n[0]).join('')}
+                  <div className="w-32 h-32 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <span className="text-5xl font-bold text-white">
+                      {member.avatar}
+                    </span>
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground">{member.name}</h3>
-                  <p className="text-sm text-primary mt-1">{member.role}</p>
+                  <h3 className="text-xl font-bold text-foreground">{member.role}</h3>
                   <p className="mt-4 text-muted-foreground">{member.bio}</p>
-
-                  <div className="mt-6 flex gap-4">
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`${member.name}'s LinkedIn`}
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
-                    {(member as any).portfolio && (
-                      <a
-                        href={(member as any).portfolio}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label={`${member.name}'s Portfolio`}
-                      >
-                        <Globe className="h-5 w-5" />
-                      </a>
-                    )}
-                    {(member as any).github && (
-                      <a
-                        href={(member as any).github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label={`${member.name}'s GitHub`}
-                      >
-                        <Github className="h-5 w-5" />
-                      </a>
-                    )}
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`Email ${member.name}`}
-                    >
-                      <Mail className="h-5 w-5" />
-                    </a>
-                  </div>
                 </div>
               </div>
             ))}

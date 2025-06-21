@@ -320,29 +320,6 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="pt-8">
-                    <h4 className="font-semibold text-foreground mb-4">Connect with Our Team</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <span className="font-medium">Aranhav:</span>
-                        <a href="mailto:aranhavsingh9@gmail.com" className="text-blue-600 hover:text-blue-700">
-                          aranhavsingh9@gmail.com
-                        </a>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className="font-medium">Harikesh:</span>
-                        <a href="mailto:harikesh.me21@gmail.com" className="text-purple-600 hover:text-purple-700">
-                          harikesh.me21@gmail.com
-                        </a>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className="font-medium">Shubham:</span>
-                        <a href="mailto:shbhmkmrjha@gmail.com" className="text-pink-600 hover:text-pink-700">
-                          shbhmkmrjha@gmail.com
-                        </a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </AnimatedSection>
 
