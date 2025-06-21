@@ -7,7 +7,7 @@ const projects = [
     category: 'Personal Finance App',
     description: 'A comprehensive personal finance management app we built because we needed a better way to manage our finances. Features expense tracking, budget management, and financial insights - all in a beautiful, intuitive interface.',
     image: '/projects/pocketflow.jpg',
-    gradient: 'from-blue-500 to-purple-600',
+    gradient: 'from-blue-400/30 to-purple-500/30',
     tags: ['React Native', 'TypeScript', 'Firebase', 'UI/UX Design'],
     highlights: [
       'Intuitive expense tracking with smart categorization',
@@ -26,7 +26,7 @@ const projects = [
     category: 'Productivity Platform',
     description: 'Born from our frustration with bloated, data-hungry office tools. A privacy-first platform offering PDF tools, QR generators, and more - all processing happens locally in your browser. No uploads, no tracking, just tools that work.',
     image: '/projects/officetools.jpg',
-    gradient: 'from-green-500 to-teal-600',
+    gradient: 'from-green-400/30 to-teal-500/30',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'WebAssembly'],
     highlights: [
       '100% privacy-first - no data leaves your device',
@@ -45,7 +45,7 @@ const projects = [
     category: 'SaaS Solution',
     description: 'Developed a comprehensive SaaS platform for an international logistics company, including vendor management, tracking systems, and analytics dashboard. Transformed their operations serving thousands of vendors globally.',
     image: '/projects/logistics.jpg',
-    gradient: 'from-orange-500 to-red-600',
+    gradient: 'from-orange-400/30 to-red-500/30',
     tags: ['React', 'Node.js', 'UI/UX Design', 'System Architecture'],
     highlights: [
       '74% increase in operational efficiency',
@@ -62,7 +62,7 @@ const projects = [
     category: 'Let\'s Build Together',
     description: 'We\'re always excited to work on new challenges. Whether you need a complete product build, a platform redesign, or strategic product consulting, we bring the same passion and expertise that we put into our own products.',
     image: '/projects/next.jpg',
-    gradient: 'from-gray-600 to-gray-800',
+    gradient: 'from-gray-400/30 to-gray-600/30',
     tags: ['Your Vision', 'Our Expertise', 'Let\'s Talk'],
     highlights: [
       'End-to-end product development',
@@ -79,7 +79,7 @@ export default function Work() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-50 via-white to-orange-50 py-32 sm:py-40">
+      <section className="relative bg-gradient-to-br from-gray-50 via-white to-gray-50 py-32 sm:py-40">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl animate-fade-in">
@@ -114,15 +114,15 @@ export default function Work() {
                 {/* Image Section */}
                 <div className="relative lg:w-1/2">
                   <div className={cn(
-                    'absolute inset-0 bg-gradient-to-br opacity-90',
+                    'absolute inset-0 bg-gradient-to-br',
                     project.gradient
                   )} />
                   <div className="relative h-64 lg:h-full min-h-[400px] flex items-center justify-center">
                     <div className="text-center p-8 w-full">
-                      <h3 className="text-3xl font-bold text-white mb-2">
+                      <h3 className="text-3xl font-bold text-gray-800 mb-2">
                         {project.title}
                       </h3>
-                      <p className="text-white/90 text-sm uppercase tracking-wide">
+                      <p className="text-gray-600 text-sm uppercase tracking-wide">
                         {project.category}
                       </p>
                       
@@ -321,41 +321,41 @@ export default function Work() {
                 {/* Image Section */}
                 <div className="relative lg:w-1/2">
                   <div className={cn(
-                    'absolute inset-0 bg-gradient-to-br opacity-90',
+                    'absolute inset-0 bg-gradient-to-br',
                     project.gradient
                   )} />
                   <div className="relative h-64 lg:h-full min-h-[400px] flex items-center justify-center">
                     <div className="text-center p-8 w-full">
-                      <h3 className="text-3xl font-bold text-white mb-2">
+                      <h3 className="text-3xl font-bold text-gray-800 mb-2">
                         {project.title}
                       </h3>
-                      <p className="text-white/90 text-sm uppercase tracking-wide">
+                      <p className="text-gray-600 text-sm uppercase tracking-wide">
                         {project.category}
                       </p>
                       
                       {/* Enterprise Logistics Mini UI */}
                       {project.title === 'Enterprise Logistics Platform' && (
                         <div className="mt-8 mx-auto max-w-sm">
-                          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 space-y-3">
+                          <div className="bg-white shadow-sm rounded-2xl p-4 space-y-3">
                             <div className="grid grid-cols-3 gap-3">
-                              <div className="bg-white/20 rounded-lg p-4 text-center">
-                                <Package className="h-6 w-6 text-white/80 mx-auto mb-1" />
-                                <div className="text-2xl font-bold text-white">20K+</div>
-                                <div className="text-xs text-white/70">Vendors</div>
+                              <div className="bg-white shadow-sm rounded-lg p-4 text-center">
+                                <Package className="h-6 w-6 text-orange-500 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-gray-800">20K+</div>
+                                <div className="text-xs text-gray-600">Vendors</div>
                               </div>
-                              <div className="bg-white/20 rounded-lg p-4 text-center">
-                                <Truck className="h-6 w-6 text-white/80 mx-auto mb-1" />
-                                <div className="text-2xl font-bold text-white">74%</div>
-                                <div className="text-xs text-white/70">Efficiency</div>
+                              <div className="bg-white shadow-sm rounded-lg p-4 text-center">
+                                <Truck className="h-6 w-6 text-red-500 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-gray-800">74%</div>
+                                <div className="text-xs text-gray-600">Efficiency</div>
                               </div>
-                              <div className="bg-white/20 rounded-lg p-4 text-center">
-                                <BarChart3 className="h-6 w-6 text-white/80 mx-auto mb-1" />
-                                <div className="text-2xl font-bold text-white">60%</div>
-                                <div className="text-xs text-white/70">Less Tickets</div>
+                              <div className="bg-white shadow-sm rounded-lg p-4 text-center">
+                                <BarChart3 className="h-6 w-6 text-purple-500 mx-auto mb-1" />
+                                <div className="text-2xl font-bold text-gray-800">60%</div>
+                                <div className="text-xs text-gray-600">Less Tickets</div>
                               </div>
                             </div>
-                            <div className="bg-white/20 rounded-lg p-3 text-center">
-                              <div className="text-sm font-semibold text-white">Real-time Tracking & Analytics</div>
+                            <div className="bg-white shadow-sm rounded-lg p-3 text-center">
+                              <div className="text-sm font-semibold text-gray-800">Real-time Tracking & Analytics</div>
                             </div>
                           </div>
                         </div>
