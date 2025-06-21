@@ -1,4 +1,4 @@
-import { Target, Heart, Zap, Users, TrendingUp, Award, Briefcase } from 'lucide-react'
+import { Target, Heart, Zap, Users, Award, Briefcase } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const team = [
@@ -228,9 +228,6 @@ export default function About() {
                       <span className="text-5xl font-bold text-white">
                         {member.avatar}
                       </span>
-                    </div>
-                    <div className="absolute -bottom-2 -right-2 h-12 w-12 rounded-full bg-white shadow-lg flex items-center justify-center">
-                      <TrendingUp className="h-6 w-6 text-gray-700" />
                     </div>
                   </div>
                 </div>

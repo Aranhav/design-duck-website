@@ -65,17 +65,11 @@ export default function Header() {
           />
           
           {/* Menu panel */}
-          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white shadow-xl md:hidden transition-transform duration-300 transform-gpu">
+          <div className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-xs bg-white shadow-xl md:hidden transition-transform duration-300 transform-gpu">
             <div className="flex h-full flex-col">
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b">
-                <Link 
-                  to="/" 
-                  className="text-xl font-bold"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Design Duck
-                </Link>
+                <span className="text-lg font-semibold text-gray-900">Menu</span>
                 <button
                   type="button"
                   className="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100"
