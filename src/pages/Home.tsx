@@ -37,19 +37,25 @@ const featuredWork = [
     title: 'PocketFlow',
     category: 'Personal Finance App',
     description: 'Built from our own need for better financial management. Smart expense tracking, budgeting, and insights in one beautiful app.',
-    color: 'from-blue-400 to-blue-600',
+    bgColor: 'bg-gradient-to-br from-blue-50 to-indigo-50',
+    iconColor: 'from-blue-500 to-indigo-600',
+    linkColor: 'text-blue-600 hover:text-blue-700',
   },
   {
     title: 'OfficeTools Hub',
     category: 'Privacy-First Platform',
     description: 'No more data-hungry tools. PDF processing, QR generation, and more - all running locally in your browser.',
-    color: 'from-green-400 to-green-600',
+    bgColor: 'bg-gradient-to-br from-green-50 to-emerald-50',
+    iconColor: 'from-green-500 to-emerald-600',
+    linkColor: 'text-green-600 hover:text-green-700',
   },
   {
-    title: 'ShipGlobal',
-    category: 'Client Success Story',
-    description: 'Platform redesign serving 20,000+ vendors. 74% increase in repeat orders through thoughtful UX improvements.',
-    color: 'from-orange-400 to-pink-600',
+    title: 'Enterprise Logistics',
+    category: 'SaaS Platform',
+    description: 'Complete platform transformation for an international logistics company. 74% increase in operational efficiency.',
+    bgColor: 'bg-gradient-to-br from-orange-50 to-pink-50',
+    iconColor: 'from-orange-500 to-pink-600',
+    linkColor: 'text-orange-600 hover:text-orange-700',
   },
 ]
 
@@ -120,7 +126,7 @@ export default function Home() {
             </p>
           </AnimatedSection>
           <div className="mx-auto mt-16 max-w-7xl">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
                 <AnimatedSection key={service.title} delay={index * 0.1}>
                   <motion.div
@@ -167,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* Featured Work Section */}
-      <section className="py-32 sm:py-40 bg-white">
+      <section className="py-32 sm:py-40 bg-gray-50">
         <div className="container mx-auto px-6 lg:px-8">
           <AnimatedSection className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -178,45 +184,53 @@ export default function Home() {
             </p>
           </AnimatedSection>
           <div className="mx-auto mt-16 max-w-7xl">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
               {featuredWork.map((project, index) => (
                 <AnimatedSection key={project.title} delay={index * 0.15}>
                   <motion.div
                     className={cn(
-                      'group relative overflow-hidden rounded-3xl bg-gradient-to-br p-[2px] h-full shadow-lg hover:shadow-2xl transition-all duration-300',
-                      project.color
+                      'group relative h-full rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300',
+                      project.bgColor
                     )}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ y: -8 }}
                     transition={{ duration: 0.3 }}
                   >
-                  <div className="relative h-full rounded-3xl bg-white p-8 transition-transform duration-300 group-hover:scale-[0.98]">
-                    <div className="mb-4 text-sm font-medium text-muted-foreground">
-                      {project.category}
+                    <div className="relative h-full p-10">
+                      {/* Icon */}
+                      <div className={cn(
+                        'mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br shadow-lg',
+                        project.iconColor
+                      )}>
+                        {index === 0 && <Sparkles className="h-7 w-7 text-white" />}
+                        {index === 1 && <Code2 className="h-7 w-7 text-white" />}
+                        {index === 2 && <Rocket className="h-7 w-7 text-white" />}
+                      </div>
+                      
+                      <div className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                        {project.category}
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground mb-4">
+                        {project.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
+                      <Link
+                        to="/work"
+                        className={cn(
+                          "mt-6 inline-flex items-center text-sm font-semibold transition-colors",
+                          project.linkColor
+                        )}
+                      >
+                        Learn more
+                        <ArrowRight className="ml-1 h-3 w-3" />
+                      </Link>
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground">
-                      {project.title}
-                    </h3>
-                    <p className="mt-4 text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <Link
-                      to="/work"
-                      className={cn(
-                        "mt-6 inline-flex items-center text-sm font-medium transition-colors",
-                        index === 0 && "text-blue-600 hover:text-blue-700",
-                        index === 1 && "text-green-600 hover:text-green-700",
-                        index === 2 && "text-pink-600 hover:text-pink-700"
-                      )}
-                    >
-                      Learn more
-                      <ArrowRight className="ml-1 h-3 w-3" />
-                    </Link>
-                  </div>
                   </motion.div>
                 </AnimatedSection>
               ))}
             </div>
-            <div className="mt-12 text-center">
+            <div className="mt-16 text-center">
               <Link
                 to="/work"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
