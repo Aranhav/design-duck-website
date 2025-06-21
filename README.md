@@ -21,6 +21,7 @@ Design Duck is a digital studio specializing in UI/UX design, frontend developme
 - Framer Motion 11.18.0
 - Vite 6.0.6
 - React Router DOM 6.28.2
+- EmailJS for contact form
 
 ## 📦 Installation
 
@@ -33,6 +34,10 @@ cd design-duck
 
 # Install dependencies
 npm install
+
+# Copy environment variables
+cp .env.example .env
+# Update .env with your EmailJS credentials
 
 # Start development server
 npm run dev
@@ -69,11 +74,38 @@ design-duck/
 - **Spacing**: 8px grid system
 - **Components**: Reusable, accessible components
 
+## 📧 Contact Form Setup
+
+The contact form uses EmailJS to send emails directly from the browser. To set it up:
+
+1. Create an account at [EmailJS](https://www.emailjs.com/)
+2. Create a new email service (Gmail, Outlook, etc.)
+3. Create an email template with these variables:
+   - `{{from_name}}` - Sender's name
+   - `{{from_email}}` - Sender's email
+   - `{{company}}` - Company name
+   - `{{project_type}}` - Project type
+   - `{{budget}}` - Budget range
+   - `{{timeline}}` - Timeline
+   - `{{message}}` - Message content
+4. Add your credentials to `.env`:
+   ```
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
+### Vercel Deployment
+
+For Vercel deployment, add the EmailJS environment variables in the Vercel dashboard:
+- Go to Project Settings > Environment Variables
+- Add all three EmailJS variables
+
 ## 👥 Team
 
-- **Aranhav Singh** - Full Stack Developer & Co-Founder
-- **Harikesh Yadav** - Frontend Developer & Co-Founder
-- **Shubham Singh** - Full Stack Developer & Co-Founder
+- Product Manager & Co-Founder
+- Product Designer & Co-Founder  
+- Senior Frontend Engineer & Co-Founder
 
 ## 📄 License
 
@@ -81,7 +113,7 @@ This project is proprietary and confidential. All rights reserved by Design Duck
 
 ## 📞 Contact
 
-- **Email**: hello@designduck.com
+- **Email**: designduck4u@gmail.com
 - **Website**: [designduck.com](https://designduck.com)
 
 ---
