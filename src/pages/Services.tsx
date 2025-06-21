@@ -12,6 +12,7 @@ import {
   Zap,
   Shield
 } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const services = [
   {
@@ -247,26 +248,29 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {approach.map((item, index) => (
               <div
                 key={item.title}
-                className="text-center group"
+                className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
-                <div className={`mx-auto h-16 w-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
-                  index === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
-                  index === 1 ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
-                  index === 2 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
-                  'bg-gradient-to-br from-green-500 to-green-600'
-                }`}>
-                  <item.icon className="h-8 w-8 text-white" />
+                <div className="p-8">
+                  <div className={cn(
+                    "h-14 w-14 rounded-2xl flex items-center justify-center mb-4",
+                    index === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
+                    index === 1 ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
+                    index === 2 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
+                    'bg-gradient-to-br from-green-500 to-green-600'
+                  )}>
+                    <item.icon className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {item.description}
-                </p>
               </div>
             ))}
           </div>

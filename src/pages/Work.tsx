@@ -1,4 +1,4 @@
-import { ExternalLink, Github, CreditCard, TrendingUp, PieChart, Lock, FileText, QrCode, Package, Truck, BarChart3 } from 'lucide-react'
+import { ExternalLink, Github, CreditCard, TrendingUp, PieChart, Lock, FileText, QrCode, Package, Truck, BarChart3, Lightbulb, Rocket, Sparkles, Users } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const projects = [
@@ -236,6 +236,39 @@ export default function Work() {
                           </div>
                         </div>
                       )}
+                      
+                      {/* Your Next Project Graphics */}
+                      {project.title === 'Your Next Project' && (
+                        <div className="mt-8 mx-auto max-w-md">
+                          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                            <div className="grid grid-cols-2 gap-4 mb-4">
+                              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-4 text-center border border-gray-100">
+                                <Lightbulb className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                                <div className="text-sm font-semibold text-gray-800">Discovery</div>
+                                <div className="text-xs text-gray-600">Understanding your vision</div>
+                              </div>
+                              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 text-center border border-gray-100">
+                                <Sparkles className="h-8 w-8 text-purple-600 mx-auto mb-2" />
+                                <div className="text-sm font-semibold text-gray-800">Design</div>
+                                <div className="text-xs text-gray-600">Crafting the experience</div>
+                              </div>
+                              <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-lg p-4 text-center border border-gray-100">
+                                <Rocket className="h-8 w-8 text-pink-600 mx-auto mb-2" />
+                                <div className="text-sm font-semibold text-gray-800">Development</div>
+                                <div className="text-xs text-gray-600">Building with precision</div>
+                              </div>
+                              <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-4 text-center border border-gray-100">
+                                <Users className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                                <div className="text-sm font-semibold text-gray-800">Partnership</div>
+                                <div className="text-xs text-gray-600">Growing together</div>
+                              </div>
+                            </div>
+                            <div className="text-center p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg">
+                              <div className="text-sm font-bold text-gray-800">Let's Build Something Amazing</div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -387,6 +420,39 @@ export default function Work() {
                             </div>
                             <div className="bg-white rounded-lg p-3 text-center shadow-sm border border-gray-100">
                               <div className="text-sm font-semibold text-gray-900">Real-time Tracking & Analytics</div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Your Next Project Graphics */}
+                      {project.title === 'Your Next Project' && (
+                        <div className="mt-8 mx-auto max-w-md">
+                          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                            <div className="grid grid-cols-2 gap-4 mb-4">
+                              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-4 text-center border border-gray-100">
+                                <Lightbulb className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                                <div className="text-sm font-semibold text-gray-800">Discovery</div>
+                                <div className="text-xs text-gray-600">Understanding your vision</div>
+                              </div>
+                              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 text-center border border-gray-100">
+                                <Sparkles className="h-8 w-8 text-purple-600 mx-auto mb-2" />
+                                <div className="text-sm font-semibold text-gray-800">Design</div>
+                                <div className="text-xs text-gray-600">Crafting the experience</div>
+                              </div>
+                              <div className="bg-gradient-to-br from-pink-50 to-orange-50 rounded-lg p-4 text-center border border-gray-100">
+                                <Rocket className="h-8 w-8 text-pink-600 mx-auto mb-2" />
+                                <div className="text-sm font-semibold text-gray-800">Development</div>
+                                <div className="text-xs text-gray-600">Building with precision</div>
+                              </div>
+                              <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg p-4 text-center border border-gray-100">
+                                <Users className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                                <div className="text-sm font-semibold text-gray-800">Partnership</div>
+                                <div className="text-xs text-gray-600">Growing together</div>
+                              </div>
+                            </div>
+                            <div className="text-center p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg">
+                              <div className="text-sm font-bold text-gray-800">Let's Build Something Amazing</div>
                             </div>
                           </div>
                         </div>
