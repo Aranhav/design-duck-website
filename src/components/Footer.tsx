@@ -31,7 +31,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="mailto:hello@designduck.com"
+                href="mailto:designduck4u@gmail.com"
                 className="hover:opacity-80 transition-opacity"
                 aria-label="Email us"
               >

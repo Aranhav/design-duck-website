@@ -5,8 +5,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    details: 'hello@designduck.com',
-    link: 'mailto:hello@designduck.com',
+    details: 'designduck4u@gmail.com',
+    link: 'mailto:designduck4u@gmail.com',
   },
   {
     icon: Phone,
@@ -75,7 +75,7 @@ export default function Contact() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-background py-24 sm:py-32">
+      <section className="relative bg-gradient-to-br from-pink-50 via-white to-blue-50 py-32 sm:py-40">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl animate-fade-in">
@@ -89,7 +89,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-24 sm:py-32 bg-muted/30">
+      <section className="py-32 sm:py-40 bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}

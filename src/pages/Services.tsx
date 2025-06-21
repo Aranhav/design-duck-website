@@ -4,6 +4,7 @@ import {
   Code2, 
   Rocket, 
   Sparkles,
+  Server,
   CheckCircle,
   ArrowRight,
   Lightbulb,
@@ -89,6 +90,25 @@ const services = [
       { step: 'Implement', desc: 'Applying brand across all touchpoints' },
     ],
   },
+  {
+    icon: Server,
+    title: 'Backend Development',
+    description: 'Building robust, scalable server-side solutions that power your applications. From APIs to databases, we ensure your backend infrastructure is secure, efficient, and future-ready.',
+    features: [
+      'RESTful & GraphQL API Development',
+      'Database Design & Optimization',
+      'Cloud Infrastructure (AWS, GCP, Azure)',
+      'Microservices Architecture',
+      'Authentication & Security',
+      'Performance Optimization & Caching',
+    ],
+    process: [
+      { step: 'Architecture', desc: 'Designing scalable system architecture' },
+      { step: 'Development', desc: 'Building secure and efficient APIs' },
+      { step: 'Integration', desc: 'Seamless frontend-backend connection' },
+      { step: 'Deployment', desc: 'Cloud deployment with monitoring' },
+    ],
+  },
 ]
 
 const approach = [
@@ -118,7 +138,7 @@ export default function Services() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-background py-24 sm:py-32">
+      <section className="relative bg-gradient-to-br from-purple-50 via-white to-blue-50 py-32 sm:py-40">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl animate-fade-in">
@@ -132,7 +152,7 @@ export default function Services() {
       </section>
 
       {/* Services Detail */}
-      <section className="py-24 sm:py-32 bg-muted/30">
+      <section className="py-32 sm:py-40 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="space-y-24">
             {services.map((service, index) => (
@@ -145,8 +165,14 @@ export default function Services() {
                 {/* Service Info */}
                 <div className="flex-1 space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <service.icon className="h-6 w-6 text-primary" />
+                    <div className={`h-12 w-12 rounded-2xl flex items-center justify-center ${
+                      index === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
+                      index === 1 ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
+                      index === 2 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
+                      index === 3 ? 'bg-gradient-to-br from-green-500 to-green-600' :
+                      'bg-gradient-to-br from-pink-500 to-pink-600'
+                    }`}>
+                      <service.icon className="h-6 w-6 text-white" />
                     </div>
                     <h2 className="text-3xl font-bold text-foreground">
                       {service.title}
@@ -173,7 +199,7 @@ export default function Services() {
                 </div>
 
                 {/* Process */}
-                <div className="flex-1 bg-card rounded-2xl p-8 border border-border">
+                <div className="flex-1 bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-200 shadow-lg">
                   <h3 className="text-xl font-semibold text-foreground mb-6">
                     Our Process
                   </h3>
@@ -181,7 +207,13 @@ export default function Services() {
                     {service.process.map((step, stepIndex) => (
                       <div key={step.step} className="flex gap-4">
                         <div className="flex-shrink-0">
-                          <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-semibold text-primary">
+                          <div className={`h-8 w-8 rounded-full flex items-center justify-center text-sm font-semibold text-white ${
+                            index === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
+                            index === 1 ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
+                            index === 2 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
+                            index === 3 ? 'bg-gradient-to-br from-green-500 to-green-600' :
+                            'bg-gradient-to-br from-pink-500 to-pink-600'
+                          }`}>
                             {stepIndex + 1}
                           </div>
                         </div>
@@ -204,7 +236,7 @@ export default function Services() {
       </section>
 
       {/* Our Approach */}
-      <section className="py-24 sm:py-32">
+      <section className="py-32 sm:py-40 bg-gray-50">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -216,13 +248,18 @@ export default function Services() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {approach.map((item) => (
+            {approach.map((item, index) => (
               <div
                 key={item.title}
                 className="text-center group"
               >
-                <div className="mx-auto h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="h-8 w-8 text-primary" />
+                <div className={`mx-auto h-16 w-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                  index === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
+                  index === 1 ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
+                  index === 2 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
+                  'bg-gradient-to-br from-green-500 to-green-600'
+                }`}>
+                  <item.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-foreground">
                   {item.title}
@@ -237,18 +274,18 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative isolate overflow-hidden bg-primary px-6 py-24 sm:py-32 lg:px-8">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-orange-600 via-purple-600 to-blue-600 px-6 py-32 sm:py-40 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to Get Started?
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-primary-foreground/90">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/90">
             Let's discuss your project and find the perfect solution for your needs.
           </p>
           <div className="mt-10">
             <Link
               to="/contact"
-              className="inline-flex items-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all"
+              className="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-purple-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               Start Your Project
               <ArrowRight className="ml-2 h-4 w-4" />

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Code2, Palette, Rocket, Sparkles } from 'lucide-react'
+import { ArrowRight, Code2, Palette, Rocket, Sparkles, Server, Mail, Phone, MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import AnimatedSection from '@/components/AnimatedSection'
@@ -24,6 +24,11 @@ const services = [
     icon: Sparkles,
     title: 'Branding & Presence',
     description: 'Building strong identities and impactful online footprints.',
+  },
+  {
+    icon: Server,
+    title: 'Backend Development',
+    description: 'Scalable APIs, databases, and cloud infrastructure that power your apps.',
   },
 ]
 
@@ -54,7 +59,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-purple-100/20" />
-        <div className="container relative mx-auto px-6 py-24 sm:py-32 lg:px-8">
+        <div className="container relative mx-auto px-6 py-32 sm:py-40 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <motion.h1 
               className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
@@ -115,7 +120,7 @@ export default function Home() {
             </p>
           </AnimatedSection>
           <div className="mx-auto mt-16 max-w-7xl">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
                 <AnimatedSection key={service.title} delay={index * 0.1}>
                   <motion.div
@@ -128,7 +133,8 @@ export default function Home() {
                     index === 0 && "bg-gradient-to-br from-blue-500 to-blue-600",
                     index === 1 && "bg-gradient-to-br from-purple-500 to-purple-600",
                     index === 2 && "bg-gradient-to-br from-orange-500 to-orange-600",
-                    index === 3 && "bg-gradient-to-br from-green-500 to-green-600"
+                    index === 3 && "bg-gradient-to-br from-green-500 to-green-600",
+                    index === 4 && "bg-gradient-to-br from-pink-500 to-pink-600"
                   )}>
                     <service.icon className="h-6 w-6 text-white" />
                   </div>
@@ -145,7 +151,8 @@ export default function Home() {
                       index === 0 && "text-blue-600 hover:text-blue-700",
                       index === 1 && "text-purple-600 hover:text-purple-700",
                       index === 2 && "text-orange-600 hover:text-orange-700",
-                      index === 3 && "text-green-600 hover:text-green-700"
+                      index === 3 && "text-green-600 hover:text-green-700",
+                      index === 4 && "text-pink-600 hover:text-pink-700"
                     )}
                   >
                     Learn more
@@ -254,6 +261,146 @@ export default function Home() {
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
             }}
           />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-32 sm:py-40 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <AnimatedSection className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Get in Touch
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Have a project in mind? Let's discuss how we can help bring your vision to life.
+            </p>
+          </AnimatedSection>
+
+          <div className="mx-auto max-w-5xl">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+              {/* Contact Information */}
+              <AnimatedSection delay={0.1}>
+                <div className="space-y-8">
+                  <h3 className="text-2xl font-bold text-foreground">Let's Start a Conversation</h3>
+                  <p className="text-muted-foreground">
+                    We're here to help and answer any question you might have. We look forward to hearing from you.
+                  </p>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600">
+                        <Mail className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Email Us</h4>
+                        <a href="mailto:designduck4u@gmail.com" className="text-muted-foreground hover:text-blue-600 transition-colors">
+                          designduck4u@gmail.com
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600">
+                        <Phone className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Call Us</h4>
+                        <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-green-600">
+                        <MapPin className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">Location</h4>
+                        <p className="text-muted-foreground">Remote First, Global Team</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-8">
+                    <h4 className="font-semibold text-foreground mb-4">Connect with Our Team</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3">
+                        <span className="font-medium">Aranhav:</span>
+                        <a href="mailto:aranhavsingh9@gmail.com" className="text-blue-600 hover:text-blue-700">
+                          aranhavsingh9@gmail.com
+                        </a>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="font-medium">Harikesh:</span>
+                        <a href="mailto:harikesh.me21@gmail.com" className="text-purple-600 hover:text-purple-700">
+                          harikesh.me21@gmail.com
+                        </a>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="font-medium">Shubham:</span>
+                        <a href="mailto:shbhmkmrjha@gmail.com" className="text-pink-600 hover:text-pink-700">
+                          shbhmkmrjha@gmail.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Quick Contact Form */}
+              <AnimatedSection delay={0.2}>
+                <div className="bg-white rounded-3xl p-8 shadow-lg">
+                  <h3 className="text-xl font-bold text-foreground mb-6">Send us a Message</h3>
+                  <form className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
+                        placeholder="John Doe"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                        Your Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all outline-none resize-none"
+                        placeholder="Tell us about your project..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
     </div>

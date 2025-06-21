@@ -82,7 +82,7 @@ export default function Work() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-background py-24 sm:py-32">
+      <section className="relative bg-gradient-to-br from-green-50 via-white to-orange-50 py-32 sm:py-40">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl animate-fade-in">
@@ -96,7 +96,7 @@ export default function Work() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-24 sm:py-32 bg-muted/30">
+      <section className="py-32 sm:py-40 bg-gray-50">
         <div className="container mx-auto px-6 lg:px-8">
           {/* Our Products Section */}
           <div className="mb-16">
@@ -109,7 +109,7 @@ export default function Work() {
               <div
                 key={project.title}
                 className={cn(
-                  'group relative overflow-hidden rounded-3xl bg-card',
+                  'group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300',
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse',
                   'flex flex-col lg:flex'
                 )}
@@ -235,7 +235,7 @@ export default function Work() {
               <div
                 key={project.title}
                 className={cn(
-                  'group relative overflow-hidden rounded-3xl bg-card',
+                  'group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300',
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse',
                   'flex flex-col lg:flex'
                 )}
