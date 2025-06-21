@@ -60,12 +60,12 @@ export default function Header() {
         <>
           {/* Backdrop */}
           <div 
-            className="fixed inset-0 z-40 bg-black/25 md:hidden" 
+            className="fixed inset-0 z-40 bg-black/25 md:hidden transition-opacity duration-300" 
             onClick={() => setMobileMenuOpen(false)}
           />
           
           {/* Menu panel */}
-          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white shadow-xl md:hidden">
+          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white shadow-xl md:hidden transition-transform duration-300 transform-gpu">
             <div className="flex h-full flex-col">
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b">
