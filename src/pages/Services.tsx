@@ -5,7 +5,6 @@ import {
   Rocket, 
   Sparkles,
   Server,
-  CheckCircle,
   ArrowRight,
   Lightbulb,
   Users,
