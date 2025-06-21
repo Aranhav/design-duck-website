@@ -96,12 +96,12 @@ export default function Work() {
       <section className="py-32 sm:py-40 bg-gray-50">
         <div className="container mx-auto px-6 lg:px-8">
           {/* Our Products Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Our Products</h2>
-            <p className="text-muted-foreground">Products we built to solve our own problems, now helping thousands of users.</p>
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-foreground mb-6">Our Products</h2>
+            <p className="text-lg text-muted-foreground">Products we built to solve our own problems, now helping thousands of users.</p>
           </div>
           
-          <div className="grid grid-cols-1 gap-12 lg:gap-16 mb-24">
+          <div className="grid grid-cols-1 gap-16 lg:gap-20 mb-32">
             {projects.filter(p => p.type === 'own').map((project, index) => (
               <div
                 key={project.title}
@@ -130,7 +130,7 @@ export default function Work() {
                 </div>
 
                 {/* Content Section */}
-                <div className="flex-1 p-8 lg:p-12">
+                <div className="flex-1 p-10 lg:p-16">
                   <p className="text-lg text-muted-foreground mb-6">
                     {project.description}
                   </p>
@@ -222,12 +222,12 @@ export default function Work() {
           </div>
           
           {/* Client Work Section */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Client Work</h2>
-            <p className="text-muted-foreground">Transforming businesses through strategic design and development.</p>
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-foreground mb-6">Client Work</h2>
+            <p className="text-lg text-muted-foreground">Transforming businesses through strategic design and development.</p>
           </div>
           
-          <div className="grid grid-cols-1 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 gap-16 lg:gap-20">
             {projects.filter(p => p.type === 'client' || p.type === 'cta').map((project, index) => (
               <div
                 key={project.title}
@@ -256,7 +256,7 @@ export default function Work() {
                 </div>
 
                 {/* Content Section */}
-                <div className="flex-1 p-8 lg:p-12">
+                <div className="flex-1 p-10 lg:p-16">
                   <p className="text-lg text-muted-foreground mb-6">
                     {project.description}
                   </p>

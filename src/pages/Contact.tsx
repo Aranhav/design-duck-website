@@ -89,9 +89,9 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-32 sm:py-40 bg-muted/30">
+      <section className="py-32 sm:py-40 bg-gradient-to-b from-gray-50 via-white to-gray-50">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-20">
             {/* Contact Information */}
             <div className="lg:col-span-1">
               <h2 className="text-2xl font-bold text-foreground mb-6">
@@ -101,12 +101,12 @@ export default function Contact() {
                 Whether you have a project in mind or just want to explore possibilities, we're here to help.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {contactInfo.map((item) => (
                   <div key={item.title} className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <item.icon className="h-5 w-5 text-primary" />
+                      <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg">
+                        <item.icon className="h-6 w-6 text-white" />
                       </div>
                     </div>
                     <div>
@@ -126,11 +126,11 @@ export default function Contact() {
                 ))}
               </div>
 
-              <div className="mt-12 p-6 bg-card rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-2">
+              <div className="mt-12 p-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   Looking for quick answers?
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground">
                   Check out our services page or view our recent work to get a better understanding of what we can do for you.
                 </p>
               </div>
@@ -138,14 +138,14 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 border border-border">
-                <h2 className="text-2xl font-bold text-foreground mb-6">
+              <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-10 lg:p-12 shadow-2xl border border-gray-100">
+                <h2 className="text-3xl font-bold text-foreground mb-8">
                   Tell Us About Your Project
                 </h2>
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-3">
                       Your Name *
                     </label>
                     <input
@@ -155,12 +155,12 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-3">
                       Email Address *
                     </label>
                     <input
@@ -170,12 +170,12 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="company" className="block text-sm font-semibold text-foreground mb-3">
                       Company Name
                     </label>
                     <input
@@ -184,12 +184,12 @@ export default function Contact() {
                       id="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="projectType" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="projectType" className="block text-sm font-semibold text-foreground mb-3">
                       Project Type *
                     </label>
                     <select
@@ -198,7 +198,7 @@ export default function Contact() {
                       required
                       value={formData.projectType}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                     >
                       <option value="">Select a service</option>
                       <option value="ui-ux">UI/UX Design</option>
@@ -211,7 +211,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="budget" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="budget" className="block text-sm font-semibold text-foreground mb-3">
                       Budget Range
                     </label>
                     <select
@@ -219,7 +219,7 @@ export default function Contact() {
                       id="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                     >
                       <option value="">Select budget</option>
                       <option value="5k-10k">$5,000 - $10,000</option>
@@ -230,7 +230,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="timeline" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="timeline" className="block text-sm font-semibold text-foreground mb-3">
                       Project Timeline
                     </label>
                     <select
@@ -238,7 +238,7 @@ export default function Contact() {
                       id="timeline"
                       value={formData.timeline}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                     >
                       <option value="">Select timeline</option>
                       <option value="asap">ASAP</option>
@@ -250,7 +250,7 @@ export default function Contact() {
                 </div>
 
                 <div className="mt-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-foreground mb-3">
                     Project Details *
                   </label>
                   <textarea
@@ -261,7 +261,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project, goals, and any specific requirements..."
-                    className="w-full px-4 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                    className="w-full px-5 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none transition-all"
                   />
                 </div>
 
@@ -269,7 +269,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2"
                   >
                     {isSubmitting ? (
                       <>Sending...</>

@@ -154,16 +154,16 @@ export default function Services() {
       {/* Services Detail */}
       <section className="py-32 sm:py-40 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="space-y-24">
+          <div className="space-y-32">
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className={`flex flex-col lg:flex-row gap-12 items-start ${
+                className={`flex flex-col lg:flex-row gap-16 items-start ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}
               >
                 {/* Service Info */}
-                <div className="flex-1 space-y-6">
+                <div className="flex-1 space-y-8">
                   <div className="flex items-center gap-4">
                     <div className={`h-12 w-12 rounded-2xl flex items-center justify-center ${
                       index === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
@@ -199,7 +199,7 @@ export default function Services() {
                 </div>
 
                 {/* Process */}
-                <div className="flex-1 bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-200 shadow-lg">
+                <div className="flex-1 bg-gradient-to-br from-gray-50 to-white rounded-3xl p-10 lg:p-12 border border-gray-200 shadow-lg">
                   <h3 className="text-xl font-semibold text-foreground mb-6">
                     Our Process
                   </h3>
@@ -238,7 +238,7 @@ export default function Services() {
       {/* Our Approach */}
       <section className="py-32 sm:py-40 bg-gray-50">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
+          <div className="mx-auto max-w-2xl text-center mb-20">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Our Approach
             </h2>
@@ -247,7 +247,7 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             {approach.map((item, index) => (
               <div
                 key={item.title}
