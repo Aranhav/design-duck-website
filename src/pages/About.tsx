@@ -1,4 +1,5 @@
 import { Linkedin, Github, Mail, Target, Heart, Zap, Globe } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const team = [
   {
@@ -8,7 +9,7 @@ const team = [
     image: '/team/aranhav.jpg',
     linkedin: 'https://www.linkedin.com/in/aranhav/',
     portfolio: 'https://aranhav.com',
-    email: 'aranhav@designduck.com',
+    email: 'aranhavsingh9@gmail.com',
   },
   {
     name: 'Harikesh Chaturvedi',
@@ -17,7 +18,7 @@ const team = [
     image: '/team/harikesh.jpg',
     linkedin: 'https://www.linkedin.com/in/harikeshiiit/',
     portfolio: 'https://www.harikeshchaturvedi.com/',
-    email: 'harikesh@designduck.com',
+    email: 'harikesh.me21@gmail.com',
   },
   {
     name: 'Shubham Jha',
@@ -26,7 +27,7 @@ const team = [
     image: '/team/shubham.jpg',
     linkedin: 'https://www.linkedin.com/in/agilevisiondev/',
     github: 'https://github.com/agilevisiondev',
-    email: 'shubham@designduck.com',
+    email: 'shbhmkmrjha@gmail.com',
   },
 ]
 
@@ -59,7 +60,7 @@ export default function About() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-background py-24 sm:py-32">
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 py-32 sm:py-40">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl animate-fade-in">
@@ -73,7 +74,7 @@ export default function About() {
       </section>
 
       {/* Story Section */}
-      <section className="py-24 sm:py-32 bg-muted/30">
+      <section className="py-32 sm:py-40 bg-gray-50">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-center mb-12">
@@ -98,13 +99,13 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 sm:py-24">
+      <section className="py-24 sm:py-32 bg-gradient-to-r from-purple-100 via-pink-100 to-orange-100">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-4xl font-bold text-primary">{stat.value}</div>
-                <div className="mt-2 text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{stat.value}</div>
+                <div className="mt-2 text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -112,7 +113,7 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 sm:py-32 bg-muted/30">
+      <section className="py-32 sm:py-40 bg-white">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -130,8 +131,13 @@ export default function About() {
                 className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow"
               >
                 {/* Placeholder for image */}
-                <div className="h-64 bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-primary/30">
+                <div className={cn(
+                  "h-64 flex items-center justify-center",
+                  index === 0 && "bg-gradient-to-br from-blue-400 to-blue-600",
+                  index === 1 && "bg-gradient-to-br from-purple-400 to-purple-600",
+                  index === 2 && "bg-gradient-to-br from-orange-400 to-pink-600"
+                )}>
+                  <div className="text-6xl font-bold text-white/80">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </div>
                 </div>
@@ -189,7 +195,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 sm:py-32">
+      <section className="py-32 sm:py-40 bg-gray-50">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -206,8 +212,13 @@ export default function About() {
                 key={value.title}
                 className="text-center group"
               >
-                <div className="mx-auto h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <value.icon className="h-8 w-8 text-primary" />
+                <div className={cn(
+                  "mx-auto h-16 w-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110",
+                  index === 0 && "bg-gradient-to-br from-blue-500 to-blue-600",
+                  index === 1 && "bg-gradient-to-br from-purple-500 to-purple-600",
+                  index === 2 && "bg-gradient-to-br from-orange-500 to-pink-600"
+                )}>
+                  <value.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-foreground">
                   {value.title}
@@ -222,18 +233,18 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative isolate overflow-hidden bg-primary px-6 py-24 sm:py-32 lg:px-8">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 px-6 py-32 sm:py-40 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Let's Build Something Amazing Together
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-primary-foreground/90">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/90">
             Ready to transform your ideas into reality? We'd love to hear about your project.
           </p>
           <div className="mt-10">
             <a
               href="/contact"
-              className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all"
+              className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-purple-600 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               Get in Touch
             </a>
