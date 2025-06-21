@@ -30,20 +30,20 @@ const services = [
 const featuredWork = [
   {
     title: 'PocketFlow',
-    category: 'Personal Finance Management',
-    description: 'A comprehensive mobile app for tracking expenses, managing budgets, and achieving financial goals.',
+    category: 'Personal Finance App',
+    description: 'Built from our own need for better financial management. Smart expense tracking, budgeting, and insights in one beautiful app.',
     color: 'from-blue-500 to-purple-600',
   },
   {
     title: 'OfficeTools Hub',
-    category: 'Productivity Platform',
-    description: 'A suite of privacy-first tools including PDF merger, QR generator, and password utilities.',
+    category: 'Privacy-First Platform',
+    description: 'No more data-hungry tools. PDF processing, QR generation, and more - all running locally in your browser.',
     color: 'from-green-500 to-teal-600',
   },
   {
-    title: 'Coming Soon',
-    category: 'Your Project Here',
-    description: 'We are ready to bring your vision to life with our expertise in design and development.',
+    title: 'ShipGlobal',
+    category: 'Client Success Story',
+    description: 'Platform redesign serving 20,000+ vendors. 74% increase in repeat orders through thoughtful UX improvements.',
     color: 'from-orange-500 to-red-600',
   },
 ]
@@ -78,7 +78,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              We architect digital futures from vision to market leader. Bold design, flawless code, and unstoppable brands for startups and tech businesses.
+              Three minds, one vision: Product strategy meets thoughtful design meets solid engineering. We build digital products that users love and businesses rely on.
             </motion.p>
             <motion.div 
               className="mt-10 flex items-center justify-center gap-x-6"
@@ -180,15 +180,13 @@ export default function Home() {
                     <p className="mt-4 text-muted-foreground">
                       {project.description}
                     </p>
-                    {index < 2 && (
-                      <Link
-                        to="/work"
-                        className="mt-6 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                      >
-                        View case study
-                        <ArrowRight className="ml-1 h-3 w-3" />
-                      </Link>
-                    )}
+                    <Link
+                      to="/work"
+                      className="mt-6 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                    >
+                      View case study
+                      <ArrowRight className="ml-1 h-3 w-3" />
+                    </Link>
                   </div>
                   </motion.div>
                 </AnimatedSection>

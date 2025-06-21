@@ -4,17 +4,17 @@ import { Linkedin, Github, Mail } from 'lucide-react'
 const team = [
   {
     name: 'Aranhav Singh',
-    role: 'Full Stack Developer',
+    role: 'Product Manager',
     linkedin: 'https://www.linkedin.com/in/aranhav/',
   },
   {
-    name: 'Harikesh Yadav',
-    role: 'Frontend Developer',
+    name: 'Harikesh Chaturvedi',
+    role: 'Product Designer',
     linkedin: 'https://www.linkedin.com/in/harikeshiiit/',
   },
   {
-    name: 'Shubham Singh',
-    role: 'Full Stack Developer',
+    name: 'Shubham Jha',
+    role: 'Frontend Engineer',
     linkedin: 'https://www.linkedin.com/in/agilevisiondev/',
   },
 ]
@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Design Duck</h3>
             <p className="text-sm opacity-90 mb-4">
-              Where Design Meets Engineering. We craft digital experiences that drive growth for startups and tech businesses.
+              Where Design Meets Engineering. Product strategy, thoughtful design, and solid code - working together to create products users love.
             </p>
             <div className="flex gap-4">
               <a

@@ -1,28 +1,28 @@
-import { Linkedin, Github, Mail, Target, Heart, Zap } from 'lucide-react'
+import { Linkedin, Github, Mail, Target, Heart, Zap, Globe } from 'lucide-react'
 
 const team = [
   {
     name: 'Aranhav Singh',
-    role: 'Full Stack Developer & Co-Founder',
-    bio: 'Passionate about building scalable applications and creating seamless user experiences. Specializes in React, Node.js, and cloud architecture.',
+    role: 'Product Manager & Co-Founder',
+    bio: 'Dynamic product manager with 6+ years of experience in developing customer-centric products across e-commerce and logistics. Expert in market research, roadmap creation, and cross-functional team leadership.',
     image: '/team/aranhav.jpg',
     linkedin: 'https://www.linkedin.com/in/aranhav/',
-    github: 'https://github.com/aranhav',
+    portfolio: 'https://aranhav.com',
     email: 'aranhav@designduck.com',
   },
   {
-    name: 'Harikesh Yadav',
-    role: 'Frontend Developer & Co-Founder',
-    bio: 'Expert in crafting beautiful, responsive interfaces. Focused on performance optimization and modern web technologies.',
+    name: 'Harikesh Chaturvedi',
+    role: 'Product Designer & Co-Founder',
+    bio: 'Product Designer with 5+ years specializing in creating engaging user experiences. Currently Founding Designer at ShipGlobal, with expertise in UX/UI design, product thinking, and leading design teams.',
     image: '/team/harikesh.jpg',
     linkedin: 'https://www.linkedin.com/in/harikeshiiit/',
-    github: 'https://github.com/harikesh',
+    portfolio: 'https://www.harikeshchaturvedi.com/',
     email: 'harikesh@designduck.com',
   },
   {
-    name: 'Shubham Singh',
-    role: 'Full Stack Developer & Co-Founder',
-    bio: 'Specializes in building robust backend systems and API development. Passionate about clean code and software architecture.',
+    name: 'Shubham Jha',
+    role: 'Senior Frontend Engineer & Co-Founder',
+    bio: 'Frontend developer passionate about building scalable, user-centric products. Expert in React, modern web technologies, and translating complex requirements into intuitive interfaces.',
     image: '/team/shubham.jpg',
     linkedin: 'https://www.linkedin.com/in/agilevisiondev/',
     github: 'https://github.com/agilevisiondev',
@@ -81,13 +81,16 @@ export default function About() {
             </h2>
             <div className="prose prose-lg mx-auto text-muted-foreground">
               <p>
-                Founded with a passion for innovation and a commitment to digital excellence, Design Duck was built on the belief that bold ideas deserve flawless execution. We recognized a gap in the market where startups and growing businesses needed more than just contractors – they needed partners who could understand their vision and translate it into reality.
+                Design Duck was born from a simple belief: great products emerge when design and engineering work in perfect harmony. We are three like-minded professionals who met while working together on various projects, where we consistently saw the gap between beautiful designs and flawless execution.
               </p>
               <p className="mt-6">
-                Our journey began when three developers with complementary skills came together with a shared vision: to create a studio that combines the agility of a startup with the expertise of seasoned professionals. Each of us brings unique strengths to the table, from frontend mastery to backend architecture, from UI/UX design to product strategy.
+                Our journey began with PocketFlow – a personal finance app we built in our spare time because we couldn't find the perfect solution for managing our own finances. This project became our proof of concept: when a product manager, a designer, and an engineer collaborate from day one, magic happens. The success of PocketFlow showed us that our complementary skills could create products that are both beautiful and functional.
               </p>
               <p className="mt-6">
-                Today, Design Duck stands as a testament to what passionate developers can achieve when they focus on quality, innovation, and client success. We've helped dozens of startups and businesses transform their ideas into successful digital products, and we're just getting started.
+                Next came OfficeTools – born from our daily frustration with privacy concerns and clunky office utilities. We built a suite of tools that we wanted to use ourselves: fast, private, and beautifully designed. No data collection, no subscriptions, just tools that work exactly as they should.
+              </p>
+              <p className="mt-6">
+                Today, Design Duck represents our vision for how digital products should be built. We bring together product strategy, thoughtful design, and solid engineering to help startups and businesses create products their users will love. Whether it's revamping existing platforms or building new ones from scratch, we approach each project with the same passion that drove us to create our own products.
               </p>
             </div>
           </div>
@@ -148,9 +151,20 @@ export default function About() {
                     >
                       <Linkedin className="h-5 w-5" />
                     </a>
-                    {member.github && (
+                    {(member as any).portfolio && (
                       <a
-                        href={member.github}
+                        href={(member as any).portfolio}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        aria-label={`${member.name}'s Portfolio`}
+                      >
+                        <Globe className="h-5 w-5" />
+                      </a>
+                    )}
+                    {(member as any).github && (
+                      <a
+                        href={(member as any).github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"

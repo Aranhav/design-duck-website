@@ -4,97 +4,77 @@ import { cn } from '@/lib/utils'
 const projects = [
   {
     title: 'PocketFlow',
-    category: 'Mobile App Development',
-    description: 'A comprehensive personal finance management app built with React Native. Features include expense tracking, budget management, financial goal setting, and insightful analytics.',
+    category: 'Personal Finance App',
+    description: 'A comprehensive personal finance management app we built because we needed a better way to manage our finances. Features expense tracking, budget management, and financial insights - all in a beautiful, intuitive interface.',
     image: '/projects/pocketflow.jpg',
     gradient: 'from-blue-500 to-purple-600',
     tags: ['React Native', 'TypeScript', 'Firebase', 'UI/UX Design'],
     highlights: [
-      'Intuitive expense tracking with categorization',
-      'Smart budget alerts and notifications',
-      'Financial goal tracking and insights',
-      'Secure data encryption',
+      'Intuitive expense tracking with smart categorization',
+      'Real-time budget monitoring and alerts',
+      'Financial goal tracking with visual progress',
+      'Bank-level security with biometric authentication',
+      'Currently in beta testing',
     ],
     links: {
-      github: 'https://github.com/agilevisiondev/pocketflow',
+      demo: 'https://finpal-dev.web.app/login',
     },
+    type: 'own',
   },
   {
     title: 'OfficeTools Hub',
-    category: 'Web Application',
-    description: 'A privacy-first productivity platform offering various tools including PDF merger, QR code generator, password generator, and more. All processing happens locally in the browser.',
+    category: 'Productivity Platform',
+    description: 'Born from our frustration with bloated, data-hungry office tools. A privacy-first platform offering PDF tools, QR generators, and more - all processing happens locally in your browser. No uploads, no tracking, just tools that work.',
     image: '/projects/officetools.jpg',
     gradient: 'from-green-500 to-teal-600',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'WebAssembly'],
     highlights: [
-      'Privacy-first architecture',
-      'No server dependencies',
-      'Advanced PDF processing',
-      'Modern, responsive design',
+      '100% privacy-first - no data leaves your device',
+      'Lightning fast with no server dependencies',
+      'Advanced PDF processing with password protection',
+      'Beautiful, responsive design',
+      'Free forever, no ads or tracking',
     ],
     links: {
       live: 'https://officetools-4uym23kfv-aranhavs-projects.vercel.app',
     },
+    type: 'own',
   },
   {
-    title: 'E-Commerce Platform',
-    category: 'Full Stack Development',
-    description: 'A modern e-commerce solution with seamless shopping experience, inventory management, and secure payment processing.',
-    image: '/projects/ecommerce.jpg',
+    title: 'ShipGlobal Platform',
+    category: 'Logistics & E-commerce',
+    description: 'Complete platform revamp for ShipGlobal, including vendor portal, franchise system, and shipment tracking. We redesigned the entire user experience for 20,000+ vendors, resulting in significant business growth.',
+    image: '/projects/shipglobal.jpg',
     gradient: 'from-orange-500 to-red-600',
-    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
+    tags: ['React', 'Node.js', 'UI/UX Design', 'System Architecture'],
     highlights: [
-      'Scalable microservices architecture',
-      'Real-time inventory tracking',
-      'Secure payment integration',
-      'Admin dashboard with analytics',
+      '74% increase in repeat orders through UX improvements',
+      '60% reduction in support tickets',
+      'Mobile-first design for pickup management',
+      'Real-time tracking system implementation',
+      'Scalable architecture supporting 20k+ daily users',
     ],
+    links: {
+      live: 'https://shipglobal.in',
+    },
     status: 'Client Project',
-  },
-  {
-    title: 'HealthTech Dashboard',
-    category: 'SaaS Platform',
-    description: 'A comprehensive healthcare management platform for clinics and hospitals to manage patient records, appointments, and billing.',
-    image: '/projects/healthtech.jpg',
-    gradient: 'from-pink-500 to-rose-600',
-    tags: ['Vue.js', 'Django', 'PostgreSQL', 'Docker'],
-    highlights: [
-      'HIPAA compliant infrastructure',
-      'Real-time appointment scheduling',
-      'Integrated billing system',
-      'Patient portal access',
-    ],
-    status: 'Client Project',
-  },
-  {
-    title: 'EdTech Learning Platform',
-    category: 'Educational Technology',
-    description: 'An interactive learning management system with video courses, quizzes, and progress tracking for educational institutions.',
-    image: '/projects/edtech.jpg',
-    gradient: 'from-indigo-500 to-purple-600',
-    tags: ['React', 'Node.js', 'MongoDB', 'WebRTC'],
-    highlights: [
-      'Live video streaming capabilities',
-      'Interactive quiz system',
-      'Progress tracking and analytics',
-      'Multi-tenant architecture',
-    ],
-    status: 'Client Project',
+    type: 'client',
   },
   {
     title: 'Your Next Project',
-    category: 'Coming Soon',
-    description: 'We are ready to bring your vision to life. Whether it\'s a mobile app, web platform, or complete digital transformation, we have the expertise to deliver.',
+    category: 'Let\'s Build Together',
+    description: 'We\'re always excited to work on new challenges. Whether you need a complete product build, a platform redesign, or strategic product consulting, we bring the same passion and expertise that we put into our own products.',
     image: '/projects/next.jpg',
     gradient: 'from-gray-600 to-gray-800',
-    tags: ['Your Stack', 'Your Vision', 'Our Expertise'],
+    tags: ['Your Vision', 'Our Expertise', 'Let\'s Talk'],
     highlights: [
-      'Custom tailored solutions',
-      'Modern tech stack',
-      'Scalable architecture',
-      'Ongoing support',
+      'End-to-end product development',
+      'UI/UX design and research',
+      'Platform modernization',
+      'Strategic product consulting',
     ],
     cta: true,
+    type: 'cta',
   },
 ]
 
@@ -109,7 +89,7 @@ export default function Work() {
               Our Work
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground animate-slide-in">
-              Explore our portfolio of digital products and solutions. Each project represents our commitment to excellence in design and development.
+              From our own products born out of personal need to transformative client projects, each represents our belief that great products emerge when design and engineering work in harmony.
             </p>
           </div>
         </div>
@@ -118,8 +98,14 @@ export default function Work() {
       {/* Projects Grid */}
       <section className="py-24 sm:py-32 bg-muted/30">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:gap-16">
-            {projects.map((project, index) => (
+          {/* Our Products Section */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Our Products</h2>
+            <p className="text-muted-foreground">Products we built to solve our own problems, now helping thousands of users.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 gap-12 lg:gap-16 mb-24">
+            {projects.filter(p => p.type === 'own').map((project, index) => (
               <div
                 key={project.title}
                 className={cn(
@@ -194,15 +180,130 @@ export default function Work() {
                           View Live
                         </a>
                       )}
-                      {project.links.github && (
+                      {(project.links as any).demo && (
                         <a
-                          href={project.links.github}
+                          href={(project.links as any).demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          Try Beta
+                        </a>
+                      )}
+                      {(project.links as any).github && (
+                        <a
+                          href={(project.links as any).github}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                         >
                           <Github className="h-4 w-4" />
                           View Code
+                        </a>
+                      )}
+                    </div>
+                  )}
+
+                  {project.status && (
+                    <p className="mt-4 text-sm text-muted-foreground italic">
+                      {project.status}
+                    </p>
+                  )}
+
+                  {project.cta && (
+                    <a
+                      href="/contact"
+                      className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-all"
+                    >
+                      Start Your Project
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Client Work Section */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Client Work</h2>
+            <p className="text-muted-foreground">Transforming businesses through strategic design and development.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 gap-12 lg:gap-16">
+            {projects.filter(p => p.type === 'client' || p.type === 'cta').map((project, index) => (
+              <div
+                key={project.title}
+                className={cn(
+                  'group relative overflow-hidden rounded-3xl bg-card',
+                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse',
+                  'flex flex-col lg:flex'
+                )}
+              >
+                {/* Image Section */}
+                <div className="relative lg:w-1/2">
+                  <div className={cn(
+                    'absolute inset-0 bg-gradient-to-br opacity-90',
+                    project.gradient
+                  )} />
+                  <div className="relative h-64 lg:h-full min-h-[400px] flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <h3 className="text-3xl font-bold text-white mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-white/90 text-sm uppercase tracking-wide">
+                        {project.category}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="flex-1 p-8 lg:p-12">
+                  <p className="text-lg text-muted-foreground mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Highlights */}
+                  <div className="space-y-2 mb-8">
+                    <h4 className="font-semibold text-foreground mb-3">Key Features:</h4>
+                    <ul className="space-y-2">
+                      {project.highlights.map((highlight) => (
+                        <li
+                          key={highlight}
+                          className="flex items-start text-sm text-muted-foreground"
+                        >
+                          <span className="mr-2 mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Links */}
+                  {project.links && (
+                    <div className="flex gap-4">
+                      {project.links.live && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          View Live
                         </a>
                       )}
                     </div>
