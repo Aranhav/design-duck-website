@@ -125,7 +125,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-            {team.map((member) => (
+            {team.map((member, index) => (
               <div
                 key={member.name}
                 className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow"
@@ -207,7 +207,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value) => (
+            {values.map((value, index) => (
               <div
                 key={value.title}
                 className="text-center group"
