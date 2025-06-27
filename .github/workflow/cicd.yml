@@ -1,0 +1,32 @@
+name: Production DEPLOYMENT
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build:
+    runs-on: aws-ec2
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version}}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build --if-present
+
+  deploy:
+    needs: build
+    runs-on: aws-ec2
+    steps:
+      - name: Clear contents of /var/www/html
+        run: sudo rm -rf /var/www/html
+      - name: Copy build folder to /var/www/html
+        run: sudo cp -r dist/* /var/www/html
