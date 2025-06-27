@@ -5,6 +5,7 @@ import Work from "./pages/Work";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+console.log("test");
 function App() {
   return (
     <Router>
