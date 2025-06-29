@@ -1,7 +1,7 @@
 {
   "name": "design-duck",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -34,6 +34,7 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.8"
+    "vite": "^6.3.5",
+    "vite-plugin-radar": "^0.10.0"
   }
 }
